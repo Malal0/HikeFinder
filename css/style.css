@@ -4,14 +4,20 @@
 * {
     box-sizing: border-box;
     transition: 300ms;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #638A5C;
 }
 
 html,
 body {
     background-color: #dedede;
     font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 nav {
@@ -55,6 +61,8 @@ h4 {
 
 .nav {
     background-color: #fff;
+    /* position: fixed; */
+    padding: 1em 0;
 }
 
 .nav-container {
@@ -70,7 +78,6 @@ h4 {
 
 .logo {
     align-items: center;
-    /* margin-right: auto; */
 }
 
 .logo-img {
@@ -139,14 +146,19 @@ h4 {
 
 /*      header classes        */
 
-.header {
+.header-section {
     background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     background-size: cover;
     background-position: center;
 }
 
-.hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.81), #00000000);
+.hero-container {
+    padding-bottom: 4.3em;
+}
+
+.hero-content {
+    background-image: linear-gradient(rgba(0, 0, 0, .75) 80%, rgba(0, 0, 0, 0));
+    padding: 4.3em 2em;
 }
 
 .hero-title {
@@ -162,23 +174,78 @@ h4 {
 /*      search classes        */
 
 .search-field {
-    background-color: #dedede;
+    background-color: white;
+    border: .0625em solid white;
+    border-radius: .5em;
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+
+.search-field .fa-solid {
+    margin-inline: .5em;
+    color: var(--green);
 }
 
 .search-input {
     background-color: transparent;
+    border: none;
+    outline: none;
     width: 100%;
 }
 
 .search-green-btn {
-    background-color: #638A5C;
+    background-color: var(--green);
     border: 0;
     color: #fff;
     font-weight: 600;
     padding: .75em 1.5em;
 }
+
+/*      Cards classes        */
+
+.cards-title {
+    color: #565656;
+}
+
+.cards-container {
+    display: grid;
+}
+
+.card {
+    display: grid;
+    background-color: white;
+}
+
+.card .image {
+    aspect-ratio: 1.83;
+    width: 100%;
+}
+
+.card .title {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.card .length {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.card .description {
+    color: #6f6f6f;
+}
+
+.card .link {
+    background-color: var(--green);
+    border-radius: .25em;
+    color: #fff;
+    padding: .5em .75em;
+    width: fit-content;
+}
+
+/*      Info Blocks classes        */
+
 
 /*footer classes*/
 .footer {
