@@ -1,0 +1,221 @@
+/*///////////////////////////////////////////////////////////////////
+        GLOBAL
+///////////////////////////////////////////////////////////////////*/
+* {
+    box-sizing: border-box;
+    transition: 300ms;
+}
+
+html,
+body {
+    background-color: #dedede;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+button>* {
+    pointer-events: none;
+}
+
+a,
+button {
+    cursor: pointer;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+/*///////////////////////////////////////////////////////////////////
+        CLASSES
+///////////////////////////////////////////////////////////////////*/
+
+/*  nav classes    */
+
+.nav {
+    background-color: #fff;
+}
+
+.nav-container {
+    align-items: center;
+}
+
+.nav-container,
+.logo {
+    display: flex;
+}
+
+/*  logo classes    */
+
+.logo {
+    align-items: center;
+    /* margin-right: auto; */
+}
+
+.logo-img {
+    width: 45px;
+}
+
+.logo-text {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/*  nav-links-container classes    */
+
+.nav-links-container,
+.nav-btns-container {
+    display: none;
+}
+
+/*  menu-open classes    */
+
+.menu-open .nav-container {
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.menu-open .logo,
+.menu-open .menu-btn {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+
+.menu-open .menu-btn {
+    transform: rotate(-270deg);
+}
+
+.menu-open .nav-links-container {
+    padding: 3em 0;
+    grid-row: 2;
+    display: grid;
+    grid-gap: .5em;
+    text-align: center;
+}
+
+.menu-open .nav-link,
+.menu-open .green-btn,
+.menu-open .login-btn {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: .5em 1.5em;
+    width: 100%;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    margin-left: auto;
+}
+
+
+
+/*footer classes*/
+.footer {
+    background-color: #000;
+    color: #A5A5A5;
+    text-align: center;
+    display: grid;
+    grid-gap: 2em;
+    padding: 3em 0;
+}
+
+.footer-nav-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.footer-nav-link {
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.footer .logo {
+    color: #fff;
+    width: fit-content;
+    margin: auto;
+}
+
+.footer .logo-text {
+    margin: 0;
+}
+
+.copyright {
+    margin: 0;
+}
+
+/*///////////////////////////////////////////////////////////////////
+        UTLILITY CLASSES
+///////////////////////////////////////////////////////////////////*/
+.container {
+    width: clamp(200px, 94%, 1320px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media(min-width: 1020px) {
+    /*  nav-links-container classes    */
+
+    .nav-links-container {
+        display: flex;
+        gap: .75em;
+        margin-left: auto;
+        align-items: center;
+    }
+
+    .nav-link,
+    .green-btn,
+    .login-btn {
+        font-weight: 600;
+        padding: .75em 1.5em;
+    }
+
+    .green-btn,
+    .login-btn {
+        border-radius: .25em;
+    }
+
+    .nav-link {
+        padding: .5em;
+    }
+
+    .green-btn {
+        background-color: #638A5C;
+        border: 1px solid #638A5C;
+        color: #fff;
+    }
+
+    .login-btn {
+        background-color: #fff;
+        border: 1px solid;
+        color: #000;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+}
