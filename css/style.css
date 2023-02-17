@@ -40,6 +40,13 @@ button {
     text-transform: uppercase;
 }
 
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
 /*///////////////////////////////////////////////////////////////////
         CLASSES
 ///////////////////////////////////////////////////////////////////*/
@@ -67,7 +74,7 @@ button {
 }
 
 .logo-img {
-    width: 45px;
+    width: 1.75em;
 }
 
 .logo-text {
@@ -121,6 +128,8 @@ button {
     width: 100%;
 }
 
+/*      menu btn        */
+
 .menu-btn {
     background-color: transparent;
     border: none;
@@ -128,7 +137,48 @@ button {
     margin-left: auto;
 }
 
+/*      header classes        */
 
+.header {
+    background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.81), #00000000);
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.hero-subtext {
+    color: #fff;
+}
+
+/*      search classes        */
+
+.search-field {
+    background-color: #dedede;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    background-color: transparent;
+    width: 100%;
+}
+
+.search-green-btn {
+    background-color: #638A5C;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+    padding: .75em 1.5em;
+}
 
 /*footer classes*/
 .footer {
@@ -175,6 +225,10 @@ button {
     width: clamp(200px, 94%, 1320px);
     margin-left: auto;
     margin-right: auto;
+}
+
+.yellow {
+    color: #ECE480;
 }
 
 @media(min-width: 1020px) {
