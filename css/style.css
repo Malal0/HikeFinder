@@ -14,7 +14,6 @@
 
 html,
 body {
-    background-color: #dedede;
     font-family: 'Inter', sans-serif;
     /* margin: 0;
     padding: 0; */
@@ -61,8 +60,9 @@ h4 {
 
 .nav {
     background-color: #fff;
-    /* position: fixed; */
+    position: fixed;
     padding: 1em 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.309);
 }
 
 .nav-container {
@@ -150,6 +150,7 @@ h4 {
     background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     background-size: cover;
     background-position: center;
+    padding-top: 3.5em;
 }
 
 .hero-container {
@@ -206,34 +207,36 @@ h4 {
 
 .cards-title {
     color: #565656;
+    padding: 1.25em 0 1em 0;
 }
 
 .cards-container {
     display: grid;
-}
-
-.card {
-    display: grid;
-    background-color: white;
+    row-gap: 3em;
+    padding-bottom: 3em;
 }
 
 .card .image {
     aspect-ratio: 1.83;
     width: 100%;
+    margin-bottom: 1.5em;
 }
 
 .card .title {
     font-size: 2rem;
     font-weight: 600;
+    margin-bottom: .25em;
 }
 
 .card .length {
     font-size: 1.125rem;
     font-weight: 600;
+    margin-bottom: 1.25em;
 }
 
 .card .description {
     color: #6f6f6f;
+    margin-bottom: 1.75em;
 }
 
 .card .link {
@@ -242,6 +245,11 @@ h4 {
     color: #fff;
     padding: .5em .75em;
     width: fit-content;
+}
+
+.card>:not(.image) {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 /*      Info Blocks classes        */
@@ -296,6 +304,10 @@ h4 {
 
 .yellow {
     color: #ECE480;
+}
+
+.menu-open {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
 @media(min-width: 1020px) {
