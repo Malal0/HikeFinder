@@ -216,10 +216,15 @@ h4 {
     padding-bottom: 3em;
 }
 
+.card {
+    display: grid;
+}
+
 .card .image {
     aspect-ratio: 1.83;
-    width: 100%;
     margin-bottom: 1.5em;
+    object-fit: cover;
+    width: 100%;
 }
 
 .card .title {
@@ -384,5 +389,93 @@ h4 {
 
     .menu-btn {
         display: none;
+    }
+
+    /*      header classes        */
+
+    .header-section {
+        background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+        background-size: cover;
+        background-position: center;
+        padding-top: 3.5em;
+    }
+
+    .hero-container {
+        padding-bottom: 4.3em;
+    }
+
+    .hero-content {
+        background-image: linear-gradient(rgba(0, 0, 0, .75) 80%, rgba(0, 0, 0, 0));
+        padding: 4.3em 2em;
+    }
+
+    .hero-title {
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+
+    .hero-subtext {
+        color: #fff;
+    }
+
+    /*      Cards classes        */
+
+    .cards-container {
+        row-gap: 2em;
+    }
+
+    .card {
+        grid-template-columns: 5% 37.5% 5% 5% 5% 37.5% 5%;
+        grid-template-rows: 15% auto auto auto auto 15%;
+        height: fit-content;
+    }
+
+    .card .image {
+        aspect-ratio: 1.5;
+        margin-bottom: 0;
+        grid-row: 1 / -1;
+        grid-column: 1 / 5;
+    }
+
+    .card .title {
+        grid-row: 2;
+    }
+
+    .card .length {
+        margin-bottom: 0;
+        grid-row: 3;
+    }
+
+    .card .description {
+        margin: 1.75em 1em;
+        grid-row: 4;
+    }
+
+    .card .link {
+        grid-row: 5;
+    }
+
+    .card>:not(.image) {
+        grid-column: 6 / -2;
+    }
+
+    .card:nth-child(even) .image {
+        grid-column: 4 / -1;
+    }
+
+    .card:nth-child(even)>:not(.image) {
+        grid-column: 2 / 3;
+    }
+
+    /*      Info Blocks classes        */
+
+    .info-blocks-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info-block {
+        width: clamp(100px, 75%, 330px);
     }
 }
