@@ -25,7 +25,6 @@ nav {
 
 a {
     text-decoration: none;
-    color: black;
 }
 
 ul {
@@ -72,6 +71,16 @@ h4 {
 .nav-container,
 .logo {
     display: flex;
+}
+
+.logo,
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover,
+.footer-nav-link:hover {
+    color: var(--green);
 }
 
 /*  logo classes    */
@@ -127,12 +136,16 @@ h4 {
 .menu-open .login-btn {
     background-color: transparent;
     border: none;
-    color: #000;
     display: block;
     font-size: 1.25rem;
     font-weight: 600;
     padding: .5em 1.5em;
     width: 100%;
+}
+
+.menu-open .green-btn:hover,
+.menu-open .login-btn:hover {
+    color: var(--green);
 }
 
 /*      menu btn        */
