@@ -15,8 +15,8 @@
 html,
 body {
     font-family: 'Inter', sans-serif;
-    /* margin: 0;
-    padding: 0; */
+    scroll-behavior: smooth;
+    transition: 200ms;
 }
 
 nav {
@@ -235,6 +235,7 @@ h4 {
 
 .card .image {
     aspect-ratio: 1.83;
+    border-radius: 6px;
     margin-bottom: 1.5em;
     object-fit: cover;
     width: 100%;
@@ -339,6 +340,52 @@ h4 {
 
 .copyright {
     margin: 0;
+}
+
+
+
+/*///////////////////////////////////////////////////////////////////
+        EXPLORE PAGE CLASSES
+///////////////////////////////////////////////////////////////////*/
+
+/*      Map Page classes        */
+
+.map {
+    display: none;
+    width: 100%;
+}
+
+.explore-cards-container {
+    display: grid;
+    row-gap: 2em;
+}
+
+.explore-card {
+    display: grid;
+}
+
+.explore-card .image {
+    width: 100%;
+    aspect-ratio: 1.84;
+}
+
+.explore-card:not(.image) {
+    width: 100%;
+}
+
+.explore-card .title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.explore-card .rating-info {
+    display: flex;
+    font-size: 1.1rem;
+    gap: .5em;
+}
+
+.explore-card .description {
+    color: #6f6f6f;
 }
 
 /*///////////////////////////////////////////////////////////////////
@@ -504,5 +551,49 @@ h4 {
 
     .info-block {
         width: clamp(100px, 75%, 330px);
+    }
+
+    /*      Map Page classes        */
+
+    .map {
+        display: block;
+        width: 100%;
+    }
+
+    /*      Explore Page classes        */
+
+    .explore-cards-container {
+        display: grid;
+        row-gap: 2em;
+    }
+
+    .explore-card {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+    .explore-card .image {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+
+    .explore-card:not(.image) {
+        width: 100%;
+        grid-column: 1;
+    }
+
+    .explore-card .title {
+        grid-row: 1;
+    }
+
+    .explore-card .rating-info {
+        grid-row: 2;
+        display: flex;
+    }
+
+    .explore-card .description {
+        grid-row: 3;
     }
 }

@@ -4,7 +4,8 @@
 import { data } from "/data.js";
 const nav = document.querySelector("nav");
 const cardsContainer = document.querySelector("#cards-container");
-const string = data.map(card => {
+const exploreCardsContainer = document.querySelector("#explore-cards-container");
+const cardsElements = data[0].home.map(card => {
     return `
     <div class="card">
         <img class="image"
@@ -17,8 +18,31 @@ const string = data.map(card => {
     </div>
     `
 }).join("");
+const exploreCardsElements = data[1].explore.map(card => {
+    return `
+    <div class="explore-card">
+        <img class="image"
+            src="${card.image}"
+            alt="${card.title} image" />
+        <p class="title">${card.title}</p>
+        <div class="rating-info">
+            <p class="level">${card.level}</p>
+            <i class="fa-solid fa-star green"></i>
+            <p class="rating">${card.rating}</p>
+            <p class="comments-amount">(${card.comments})</p>
+        </div>
+        <p class="description">${card.description}</p>
+    </div>
+    `
+}).join("");
 
-cardsContainer.innerHTML = string;
+
+if (cardsContainer)
+    cardsContainer.innerHTML = cardsElements;
+
+if (exploreCardsContainer)
+    exploreCardsContainer.innerHTML = exploreCardsElements;
+
 /////////////////////////////////////////////////////////////////////
 //      FUNCTIONS
 /////////////////////////////////////////////////////////////////////
