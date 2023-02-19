@@ -397,16 +397,20 @@ h4 {
         background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
         background-size: cover;
         background-position: center;
-        padding-top: 3.5em;
+        padding-top: 4.4em;
     }
 
     .hero-container {
-        padding-bottom: 4.3em;
+        padding-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: end;
     }
 
     .hero-content {
         background-image: linear-gradient(rgba(0, 0, 0, .75) 80%, rgba(0, 0, 0, 0));
-        padding: 4.3em 2em;
+        padding: 7.3em 2em;
+        grid-column: 2;
     }
 
     .hero-title {
@@ -417,6 +421,16 @@ h4 {
 
     .hero-subtext {
         color: #fff;
+    }
+
+    .search-field {
+        margin: 3.5em 2em;
+        grid-column: 3;
+    }
+
+    .hero-content,
+    .search-field {
+        width: clamp(400px, 100%, 615px);
     }
 
     /*      Cards classes        */
