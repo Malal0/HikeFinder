@@ -348,20 +348,14 @@ h4 {
         EXPLORE PAGE CLASSES
 ///////////////////////////////////////////////////////////////////*/
 
-/*      Map Page classes        */
-
 .map {
     display: none;
     width: 100%;
 }
 
-.explore-cards-container {
-    display: grid;
-    row-gap: 2em;
-}
-
 .explore-card {
     display: grid;
+    row-gap: 1em;
 }
 
 .explore-card .image {
@@ -409,7 +403,8 @@ h4 {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
-@media(min-width: 1020px) {
+/* @media(min-width: 1020px) { */
+@media(min-width: 720px) {
     /*  nav-links-container classes    */
 
     .nav-links-container {
@@ -457,7 +452,7 @@ h4 {
         background-image: url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
         background-size: cover;
         background-position: center;
-        padding-top: 4.4em;
+        /* padding-top: 10em; */
     }
 
     .hero-container {
@@ -469,7 +464,7 @@ h4 {
 
     .hero-content {
         background-image: linear-gradient(rgba(0, 0, 0, .75) 80%, rgba(0, 0, 0, 0));
-        padding: 7.3em 2em;
+        padding: 12em 2em;
         grid-column: 2;
     }
 
@@ -553,21 +548,57 @@ h4 {
         width: clamp(100px, 75%, 330px);
     }
 
-    /*      Map Page classes        */
+    /*      Explore Page classes        */
+
+    .explore .hero-container {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    .explore .hero-content {
+        padding: 12em 2em 12em 2em;
+        grid-column: 1;
+        width: 100%;
+    }
+
+    .explore .hero-container .hero-content .container {
+        display: block;
+        margin: 0 2em 0 auto;
+        width: clamp(300px, 100%, 480px);
+    }
+
+
 
     .map {
         display: block;
         width: 100%;
     }
 
-    /*      Explore Page classes        */
-
-    .explore-cards-container {
+    .explore .container {
         display: grid;
-        row-gap: 2em;
+        grid-template-columns: 1fr 1.4875fr;
+        grid-template-rows: auto auto;
+        column-gap: 1em;
     }
 
-    .explore-card {
+    .explore .cards-title {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .explore .cards-container {
+        grid-column: 1;
+        grid-row: 2 / -1;
+    }
+
+    .explore .map {
+        grid-column: 2;
+        grid-row: 2 / -1;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .explore .explore-card {
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: auto auto auto;
