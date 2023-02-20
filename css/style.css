@@ -416,7 +416,6 @@ h4 {
     padding: 1em;
     width: clamp(300px, 85%, 400px);
     height: fit-content;
-
     position: fixed;
     top: 0;
     left: 0;

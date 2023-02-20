@@ -20,7 +20,7 @@ const cardsElements = data.home.map(card => {
 }).join("");
 const exploreCardsElements = data.explore.map(card => {
     return `
-    <a href="${card.link}" class="explore-card">
+    <div data-link="${card.link}" class="explore-card">
         <img class="image"
             src="${card.image}"
             alt="${card.title} image" />
@@ -32,7 +32,7 @@ const exploreCardsElements = data.explore.map(card => {
             <p class="comments-amount">(${card.comments})</p>
         </div>
         <p class="description">${card.description}</p>
-    </a>
+    </div>
     `
 }).join("");
 
@@ -58,6 +58,8 @@ function handleClick(e) {
         toggleModalVisibilty(e.target.dataset.id);
     } else if (e.target.id === "sign-up-btn") {
         handleSubmit(e);
+    } else if (e.target.classList[0] === "explore-card") {
+        handleMap(e);
     }
 }
 
@@ -88,6 +90,10 @@ function toggleModalVisibilty(id) {
             loginModal.classList.toggle("hidden");
         }
     }
+}
+
+function handleMap(e) {
+    document.getElementById("map").src = e.target.dataset.link;
 }
 /////////////////////////////////////////////////////////////////////
 //      EVENT LISTENERS
