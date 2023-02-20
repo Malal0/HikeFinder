@@ -458,13 +458,27 @@ form .green-btn {
 
 .form-group input {
     font-size: 1rem;
-    font-weight: 600;
     padding: 1em 1.5em;
 }
 
 .form-group input:focus {
     outline: 2px solid var(--green);
-    box-shadow: 0 0 3px var(--green);
+    box-shadow: 0 0 10px var(--green);
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: 0;
+}
+
+.remove-btn:hover,
+.remove-btn:focus {
+    color: var(--green);
 }
 
 /*///////////////////////////////////////////////////////////////////
