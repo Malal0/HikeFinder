@@ -395,8 +395,85 @@ h4 {
 }
 
 /*///////////////////////////////////////////////////////////////////
+        MODAL CLASSES
+///////////////////////////////////////////////////////////////////*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto auto;
+    height: 100vh;
+    background-color: #1f1f1fb5;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background-color: hsl(0, 0%, 95%);
+    margin: auto;
+    padding: 1em;
+    width: clamp(300px, 85%, 400px);
+    height: fit-content;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.modal-content .title {
+    text-align: center;
+    padding: .5em;
+}
+
+form {
+    display: grid;
+    row-gap: 1em;
+}
+
+form .green-btn {
+    background-color: var(--green);
+    border-radius: .25em;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1em;
+}
+
+.form-group {
+    display: grid;
+}
+
+.form-group>* {
+    font-family: inherit;
+    padding: .5em 0;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1em 1.5em;
+}
+
+.form-group input:focus {
+    outline: 2px solid var(--green);
+    box-shadow: 0 0 3px var(--green);
+}
+
+/*///////////////////////////////////////////////////////////////////
         UTLILITY CLASSES
 ///////////////////////////////////////////////////////////////////*/
+.hidden {
+    display: none;
+}
+
 .container {
     width: clamp(200px, 94%, 1320px);
     margin-left: auto;
@@ -443,8 +520,8 @@ h4 {
     }
 
     .green-btn {
-        background-color: #638A5C;
-        border: 1px solid #638A5C;
+        background-color: var(--green);
+        border: 1px solid var(--green);
         color: #fff;
     }
 

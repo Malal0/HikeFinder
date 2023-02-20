@@ -36,6 +36,9 @@ const exploreCardsElements = data.explore.map(card => {
     `
 }).join("");
 
+const signupModal = document.querySelector("#signup-modal");
+const loginModal = document.querySelector("#login-modal");
+
 
 if (cardsContainer)
     cardsContainer.innerHTML = cardsElements;
@@ -49,6 +52,12 @@ if (exploreCardsContainer)
 function handleClick(e) {
     if (e.target.id === "menu-btn") {
         nav.classList.toggle("menu-open");
+    } else if (e.target.classList[0] === "remove-btn") {
+        toggleModalVisibilty(e.target.classList[0]);
+    } else if (e.target.dataset.id === "sign-up" || e.target.dataset.id === "log-in") {
+        toggleModalVisibilty(e.target.dataset.id);
+    } else if (e.target.id === "sign-up-btn") {
+        handleSubmit(e);
     }
 }
 
@@ -58,6 +67,28 @@ function handleWidthChange() {
     }
 }
 
+function handleSubmit(e) {
+    e.preventDefault();
+    const signupForm = document.querySelector("#signup-form");
+
+    const res = signupForm.children[0].children[1].value;
+
+    alert(res);
+}
+
+function toggleModalVisibilty(id) {
+    if (id === "sign-up") {
+        signupModal.classList.toggle("hidden");
+    } else if (id === "log-in") {
+        loginModal.classList.toggle("hidden");
+    } else if (id === "remove-btn") {
+        if (!signupModal.classList.contains("hidden")) {
+            signupModal.classList.toggle("hidden");
+        } else if (!loginModal.classList.contains("hidden")) {
+            loginModal.classList.toggle("hidden");
+        }
+    }
+}
 /////////////////////////////////////////////////////////////////////
 //      EVENT LISTENERS
 /////////////////////////////////////////////////////////////////////
