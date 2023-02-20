@@ -41,6 +41,10 @@ a,
 button {
     cursor: pointer;
     font-family: inherit;
+}
+
+nav a,
+button {
     text-transform: uppercase;
 }
 
@@ -356,13 +360,15 @@ h4 {
 }
 
 .explore-card {
+    color: #000;
     display: grid;
     row-gap: 1em;
 }
 
 .explore-card .image {
-    width: 100%;
     aspect-ratio: 1.84;
+    object-fit: cover;
+    width: 100%;
 }
 
 .explore-card:not(.image) {
@@ -372,6 +378,10 @@ h4 {
 .explore-card .title {
     font-size: 1.2rem;
     font-weight: 700;
+}
+
+.explore-card:hover .title {
+    color: var(--green);
 }
 
 .explore-card .rating-info {
@@ -463,6 +473,7 @@ h4 {
 
     .hero-container .hero-content .container {
         display: block;
+        padding: 0;
     }
 
     .hero-content {

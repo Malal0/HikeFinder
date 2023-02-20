@@ -5,7 +5,7 @@ import { data } from "/data.js";
 const nav = document.querySelector("nav");
 const cardsContainer = document.querySelector("#cards-container");
 const exploreCardsContainer = document.querySelector("#explore-cards-container");
-const cardsElements = data[0].home.map(card => {
+const cardsElements = data.home.map(card => {
     return `
     <div class="card">
         <img class="image"
@@ -18,13 +18,13 @@ const cardsElements = data[0].home.map(card => {
     </div>
     `
 }).join("");
-const exploreCardsElements = data[1].explore.map(card => {
+const exploreCardsElements = data.explore.map(card => {
     return `
-    <div class="explore-card">
+    <a href="${card.link}" class="explore-card">
         <img class="image"
             src="${card.image}"
             alt="${card.title} image" />
-        <p class="title">${card.title}</p>
+        <p href="${card.link}" class="title">${card.title}</p>
         <div class="rating-info">
             <p class="level">${card.level}</p>
             <i class="fa-solid fa-star green"></i>
@@ -32,7 +32,7 @@ const exploreCardsElements = data[1].explore.map(card => {
             <p class="comments-amount">(${card.comments})</p>
         </div>
         <p class="description">${card.description}</p>
-    </div>
+    </a>
     `
 }).join("");
 
