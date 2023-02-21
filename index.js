@@ -37,7 +37,11 @@ const exploreCardsElements = data.explore.map(card => {
 }).join("");
 
 const signupModal = document.querySelector("#signup-modal");
+const signupForm = document.getElementById("signup-form");
+const signupFormData = new FormData(signupForm);
 const loginModal = document.querySelector("#login-modal");
+const loginForm = document.getElementById("login-form");
+const loginFormData = new FormData(loginForm);
 
 
 if (cardsContainer)
@@ -56,8 +60,6 @@ function handleClick(e) {
         toggleModalVisibilty(e.target.classList[0]);
     } else if (e.target.dataset.id === "sign-up" || e.target.dataset.id === "log-in") {
         toggleModalVisibilty(e.target.dataset.id);
-    } else if (e.target.id === "sign-up-btn") {
-        handleSubmit(e);
     } else if (e.target.classList[0] === "explore-card") {
         handleMap(e);
     }
@@ -71,11 +73,23 @@ function handleWidthChange() {
 
 function handleSubmit(e) {
     e.preventDefault();
-    const signupForm = document.querySelector("#signup-form");
+    const userData = {};
+    if (e.target.id === "signup-form") {
+        userData.fullName = signupFormData.get("fullName");
+        userData.email = signupFormData.get("email");
+        userData.password = document.getElementById("signupPassword").value;
+        userData.confirmPassword = document.getElementById("signupConfirmPassword").value;
+    } else if (e.target.id === "login-form") {
+        userData.email = loginFormData.get("email");
+        userData.password = document.getElementById("loginPassword").value;
+    }
 
-    const res = signupForm.children[0].children[1].value;
+    // console.log(userData);
+    clearInputs();
+}
 
-    alert(res);
+function clearInputs() {
+    document.querySelectorAll("input").forEach(input => input.value = "");
 }
 
 function toggleModalVisibilty(id) {
@@ -99,5 +113,10 @@ function handleMap(e) {
 //      EVENT LISTENERS
 /////////////////////////////////////////////////////////////////////
 document.addEventListener("click", handleClick);
+
+// signupForm.addEventListener("submit", handleSubmit);
+// loginForm.addEventListener("submit", handleSubmit);
+
+document.addEventListener("submit", handleSubmit);
 
 window.addEventListener("resize", handleWidthChange);
