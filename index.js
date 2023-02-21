@@ -114,9 +114,6 @@ function handleMap(e) {
 /////////////////////////////////////////////////////////////////////
 document.addEventListener("click", handleClick);
 
-// signupForm.addEventListener("submit", handleSubmit);
-// loginForm.addEventListener("submit", handleSubmit);
-
 document.addEventListener("submit", handleSubmit);
 
 window.addEventListener("resize", handleWidthChange);
