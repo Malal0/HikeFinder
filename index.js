@@ -60,8 +60,12 @@ function handleClick(e) {
         toggleModalVisibilty(e.target.classList[0]);
     } else if (e.target.dataset.id === "sign-up" || e.target.dataset.id === "log-in") {
         toggleModalVisibilty(e.target.dataset.id);
+        if (nav.classList.contains("menu-open"));
+        nav.classList.remove("menu-open");
     } else if (e.target.classList[0] === "explore-card") {
         handleMap(e);
+    } else if (e.target.classList[0] === "modal") {
+        toggleModalVisibilty(e.target.dataset.id);
     }
 }
 
@@ -79,12 +83,15 @@ function handleSubmit(e) {
         userData.email = signupFormData.get("email");
         userData.password = document.getElementById("signupPassword").value;
         userData.confirmPassword = document.getElementById("signupConfirmPassword").value;
+        signupModal.classList.toggle("hidden");
     } else if (e.target.id === "login-form") {
         userData.email = loginFormData.get("email");
         userData.password = document.getElementById("loginPassword").value;
+        loginModal.classList.toggle("hidden");
     }
 
     // console.log(userData);
+
     clearInputs();
 }
 
@@ -97,21 +104,24 @@ function toggleModalVisibilty(id) {
         signupModal.classList.toggle("hidden");
     } else if (id === "log-in") {
         loginModal.classList.toggle("hidden");
-    } else if (id === "remove-btn") {
+    } else if (id === "remove-btn" || "signup-modal" || "login-modal") {
         if (!signupModal.classList.contains("hidden")) {
             signupModal.classList.toggle("hidden");
         } else if (!loginModal.classList.contains("hidden")) {
             loginModal.classList.toggle("hidden");
         }
     }
+    clearInputs();
 }
 
 function handleMap(e) {
     document.getElementById("map").src = e.target.dataset.link;
 }
+
 /////////////////////////////////////////////////////////////////////
 //      EVENT LISTENERS
 /////////////////////////////////////////////////////////////////////
+
 document.addEventListener("click", handleClick);
 
 document.addEventListener("submit", handleSubmit);
