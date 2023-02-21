@@ -270,6 +270,7 @@ h4 {
     color: #fff;
     padding: .5em .75em;
     width: fit-content;
+    height: fit-content;
 }
 
 .card>:not(.image) {
